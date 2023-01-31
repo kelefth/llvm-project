@@ -19618,6 +19618,46 @@ Value *CodeGenFunction::EmitRISCVBuiltinExpr(unsigned BuiltinID,
     ID = Intrinsic::riscv_sm3p1;
     IntrinsicTypes = {ResultType};
     break;
+  case RISCV::BI__builtin_riscv_sfence_vmas:
+    ID = Intrinsic::riscv_sfence_vmas;
+    IntrinsicTypes = {ResultType};
+    break;
+  case RISCV::BI__builtin_riscv_sync:
+    ID = Intrinsic::riscv_sync;
+    IntrinsicTypes = {ResultType};
+    break;
+  case RISCV::BI__builtin_riscv_dcache_call:
+    ID = Intrinsic::riscv_dcache_call;
+    IntrinsicTypes = {ResultType};
+    break;
+  case RISCV::BI__builtin_riscv_dcache_ciall:
+    ID = Intrinsic::riscv_dcache_ciall;
+    IntrinsicTypes = {ResultType};
+    break;
+  case RISCV::BI__builtin_riscv_dcache_cipa:
+    ID = Intrinsic::riscv_dcache_cipa;
+    IntrinsicTypes = {ResultType};
+    break;
+  case RISCV::BI__builtin_riscv_dcache_cisw:
+    ID = Intrinsic::riscv_dcache_cisw;
+    IntrinsicTypes = {ResultType};
+    break;
+  case RISCV::BI__builtin_riscv_dcache_civa:
+    ID = Intrinsic::riscv_dcache_civa;
+    IntrinsicTypes = {ResultType};
+    break;
+  case RISCV::BI__builtin_riscv_dcache_cpa:
+    ID = Intrinsic::riscv_dcache_cpa;
+    IntrinsicTypes = {ResultType};
+    break;
+  case RISCV::BI__builtin_riscv_dcache_cpal1:
+    ID = Intrinsic::riscv_dcache_cpal1;
+    IntrinsicTypes = {ResultType};
+    break;
+  case RISCV::BI__builtin_riscv_dcache_csw:
+    ID = Intrinsic::riscv_dcache_csw;
+    IntrinsicTypes = {ResultType};
+    break;
 
   // Vector builtins are handled from here.
 #include "clang/Basic/riscv_vector_builtin_cg.inc"

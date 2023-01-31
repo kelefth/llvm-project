@@ -1807,3 +1807,36 @@ include "RISCVInstrInfoZicbo.td"
 //===----------------------------------------------------------------------===//
 
 include "RISCVInstrInfoXVentana.td"
+
+
+//===----------------------------------------------------------------------===//
+// XTheadSync & XTheadCMO
+//===----------------------------------------------------------------------===//
+
+let hasSideEffects = 1, mayLoad = 0, mayStore = 0 in
+class RVInst_nr<RISCVOpcode opcode, string opcodestr, bits<7> funct7, bits<5> funct5> 
+    : RVInst<(outs GPR: $rd), (ins), opcodestr, "", [], InstFormatR> {
+  
+  bits<5> rs1 = 0;
+  bits<5> rd = 0;
+  bits<3> funct3 = 0b000;
+
+  let Inst{31-25} = funct7;
+  let Inst{24-20} = funct5;
+  let Inst{19-15} = rs1;
+  let Inst{14-12} = funct3;
+  let Inst{11-7} = rd;
+  let Opcode = opcode.Value;
+}
+
+//===----------------------------------------------------------------------===//
+// XTheadSync extension
+//===----------------------------------------------------------------------===//
+
+include "RISCVXTheadSync.td"
+
+//===----------------------------------------------------------------------===//
+// XTheadCMO extension
+//===----------------------------------------------------------------------===//
+
+include "RISCVXTheadCMO.td"

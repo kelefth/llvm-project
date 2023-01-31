@@ -1582,3 +1582,47 @@ def int_riscv_sm4ed      : ScalarCryptoByteSelectAny;
 def int_riscv_sm3p0      : ScalarCryptoGprIntrinsicAny;
 def int_riscv_sm3p1      : ScalarCryptoGprIntrinsicAny;
 } // TargetPrefix = "riscv"
+
+
+// THead
+let TargetPrefix = "riscv" in {
+  def int_riscv_sfence_vmas :
+      Intrinsic<[llvm_any_ty], [llvm_ptr_ty, llvm_i32_ty],
+                [IntrNoMem, IntrNoReturn]>;
+
+  def int_riscv_sync :
+      Intrinsic<[llvm_any_ty], [],
+                [IntrNoMem, IntrNoReturn]>;
+
+  def int_riscv_dcache_call :
+      Intrinsic<[llvm_any_ty], [],
+                [IntrNoMem, IntrNoReturn]>;
+
+  def int_riscv_dcache_ciall :
+      Intrinsic<[llvm_any_ty], [],
+                [IntrNoMem, IntrNoReturn]>;
+
+  def int_riscv_dcache_cipa :
+      Intrinsic<[llvm_any_ty], [llvm_ptr_ty],
+                [IntrNoMem, IntrNoReturn]>;
+
+  def int_riscv_dcache_cisw :
+      Intrinsic<[llvm_any_ty], [llvm_ptr_ty],
+                [IntrNoMem, IntrNoReturn]>;
+
+  def int_riscv_dcache_civa :
+      Intrinsic<[llvm_any_ty], [llvm_ptr_ty],
+                [IntrNoMem, IntrNoReturn]>;
+
+  def int_riscv_dcache_cpa :
+      Intrinsic<[llvm_any_ty], [llvm_ptr_ty],
+                [IntrNoMem, IntrNoReturn]>;
+
+  def int_riscv_dcache_cpal1 :
+      Intrinsic<[llvm_any_ty], [llvm_ptr_ty],
+                [IntrNoMem, IntrNoReturn]>;
+
+  def int_riscv_dcache_csw :
+      Intrinsic<[llvm_any_ty], [llvm_ptr_ty],
+                [IntrNoMem, IntrNoReturn]>;
+} // TargetPrefix = "riscv"

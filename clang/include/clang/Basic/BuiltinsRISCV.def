@@ -79,5 +79,17 @@ TARGET_BUILTIN(__builtin_riscv_sm4ks, "LiLiLiIUc", "nc", "zksed")
 TARGET_BUILTIN(__builtin_riscv_sm3p0, "LiLi", "nc", "zksh")
 TARGET_BUILTIN(__builtin_riscv_sm3p1, "LiLi", "nc", "zksh")
 
+// T-Head
+TARGET_BUILTIN(__builtin_riscv_sfence_vmas, "Liv*Zi", "r", "32bit")
+TARGET_BUILTIN(__builtin_riscv_sync, "Li", "r", "32bit")
+TARGET_BUILTIN(__builtin_riscv_dcache_call, "Li", "r", "32bit")
+TARGET_BUILTIN(__builtin_riscv_dcache_ciall, "Li", "r", "32bit")
+TARGET_BUILTIN(__builtin_riscv_dcache_cipa, "Liv*", "r", "32bit")
+TARGET_BUILTIN(__builtin_riscv_dcache_cisw, "Liv*", "r", "32bit")
+TARGET_BUILTIN(__builtin_riscv_dcache_civa, "Liv*", "r", "32bit")
+TARGET_BUILTIN(__builtin_riscv_dcache_cpa, "Liv*", "r", "32bit")
+TARGET_BUILTIN(__builtin_riscv_dcache_cpal1, "Liv*", "r", "32bit")
+TARGET_BUILTIN(__builtin_riscv_dcache_csw, "Liv*", "r", "32bit")
+
 #undef BUILTIN
 #undef TARGET_BUILTIN
